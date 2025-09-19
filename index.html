@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pyxlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-bg: #1a1a2e;
+        --color-text: #e0e0e0;
+        --color-text-muted: #94a3b8;
+        --color-primary: #f0f;
+        --color-secondary: #0ff;
+        --color-surface-1: rgba(0, 0, 0, 0.3);
+        --color-surface-2: #1e293b;
+        --color-surface-3: #0f172a;
+        --color-border-primary: #f0f;
+        --color-border-secondary: #0ff;
+        --color-border-muted: #334155;
+        --color-priority-high: #ef4444;
+        --color-priority-medium: #facc15;
+        --color-priority-low: #4ade80;
+        --color-selection-bg: #f0f;
+        --color-selection-text: #000;
+      }
+
+      body {
+        font-family: 'Press Start 2P', cursive;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        image-rendering: pixelated;
+      }
+      /* Custom scrollbar for 8-bit feel */
+      ::-webkit-scrollbar {
+        width: 16px;
+        background-color: var(--color-surface-3);
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary);
+        border: 2px solid var(--color-secondary);
+      }
+      ::-webkit-scrollbar-track {
+        background-color: var(--color-surface-3);
+        border: 2px solid var(--color-primary);
+      }
+       /* Disable ugly date/time input icons */
+      input[type="date"]::-webkit-calendar-picker-indicator,
+      input[type="time"]::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+      ::selection {
+        background-color: var(--color-selection-bg);
+        color: var(--color-selection-text);
+      }
+      @keyframes pulse-glow {
+        0%, 100% {
+          box-shadow: 0 0 5px var(--color-secondary), 0 0 10px var(--color-secondary);
+          border-color: var(--color-border-secondary);
+        }
+        50% {
+          box-shadow: 0 0 15px var(--color-secondary), 0 0 25px var(--color-secondary);
+          border-color: var(--color-secondary);
+        }
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 2s infinite ease-in-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
